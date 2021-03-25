@@ -1,0 +1,24 @@
+
+name: Test
+
+#
+# Triggers to start this workflow (Based on gitflow)
+on:
+  push:
+    branches: [ '**' ]
+
+#
+# Workflow Jobs
+jobs:
+
+  deploy:
+    name: Deploy
+
+    # runs-on: [ self-hosted ]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run bash script
+        run: deploy.sh
+
