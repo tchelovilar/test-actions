@@ -22,5 +22,5 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run bash script
-        run: deploy.sh
+        run: ./deploy.sh
 
