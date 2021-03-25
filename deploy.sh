@@ -2,19 +2,20 @@
 
 # Execute some commands in case of sigterm
 function stop_deploy {
-    echo "Sigterm received"
+    echo "** Sigterm received **"
     sleep 3
+    echo "Job cancelled..."
     echo "Exiting"
 }
 
 
-# 
+# Fake command to waste time
 function fake_deploy {
     while [ 1 ] ; do
         echo "Deploy is running"
-        sleep 10
+        sleep 1
         (( count++ ))
-        if [[ $count -gt 12 ]]; then
+        if [[ $count -gt 60 ]]; then
             exit 0
         fi
     done
